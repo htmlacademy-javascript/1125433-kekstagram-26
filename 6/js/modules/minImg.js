@@ -10,9 +10,9 @@ const picturesPart = document.createDocumentFragment();
 
 photoData.forEach(({url, comments, likes}) => {
   const pictureElem = pictureTemplate.cloneNode(true);
-  pictureTemplate.querySelector('.picture__img').src = url;
-  pictureTemplate.querySelector('.picture__comments').textContent = comments.length;
-  pictureTemplate.querySelector('.picture__likes').textContent = likes;
+  pictureElem.querySelector('.picture__img').src = url;
+  pictureElem.querySelector('.picture__comments').textContent = comments.length;
+  pictureElem.querySelector('.picture__likes').textContent = likes;
   picturesPart.appendChild(pictureElem);
 });
 pictures.appendChild(picturesPart);
