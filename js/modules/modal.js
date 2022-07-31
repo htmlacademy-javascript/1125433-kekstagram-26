@@ -31,11 +31,7 @@ const closeModal = () => {
 
 function modalEscKeydownHandler(evt) {
   if (isEscapeKey(evt)) {
-    if (evt.target.matches('.text__hashtags') || evt.target.matches('.text__description')) {
-      return;
-    }
-
-    if (document.querySelector('.error')) {
+    if (evt.target.matches('.text__hashtags') || evt.target.matches('.text__description') || document.querySelector('.error')) {
       return;
     }
 

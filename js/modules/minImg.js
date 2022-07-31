@@ -5,7 +5,7 @@ const pictures = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const picturesPart = document.createDocumentFragment();
 
-let photosData = [];
+let photosArr = [];
 
 function renderPictures(photos) {
   photos.forEach(({ id, url, comments, likes }) => {
@@ -17,7 +17,7 @@ function renderPictures(photos) {
     picturesPart.appendChild(pictureElem);
 
   });
-  photosData = photos;
+  photosArr = photos;
   pictures.appendChild(picturesPart);
 }
 
@@ -26,7 +26,7 @@ pictures.addEventListener('click', (evt) => {
   if (eventElement) {
     evt.preventDefault();
     const photoId = eventElement.dataset.photoId;
-    const photo = photosData.find((element) => element.id === Number(photoId));
+    const photo = photosArr.find((element) => element.id === Number(photoId));
     if (photo) {
       renderPicture(photo);
     }
